@@ -1,26 +1,31 @@
 import './App.css';
 import Nav from './components/Nav';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Countries from './components/Countries'
 
-function App() {
+
+
+const App = () => {
+  // 
+
+
+
   // toggle
-  const [on, setOn] = React.useState(false);
+  const [on, setOn] = useState(false);
 
 
   // country select
-  const [country, setCountry] = React.useState('none');
-  console.log(country)
+  const [country, setRegion] = useState('none');
 
   function redirect(info) {
-    setCountry(info);
+    setRegion(info);
   }
   return (
     <div className="App">
       <Nav />
       <div className="container">
         <form>
-          <input type="search" placeholder="Seach for a country" />
-
+          <input type="search" placeholder="Search for a country" />
         </form>
         <button onClick={() => setOn((prev) => (!prev))} className='region'>Filter by Region</button>
         {on &&
@@ -33,7 +38,7 @@ function App() {
 
           </ul>}
 
-        {/* cards time! */}
+        <Countries />
 
       </div>
     </div>
