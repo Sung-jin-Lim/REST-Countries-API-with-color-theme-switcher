@@ -85,7 +85,8 @@ input[type="search"]:focus {
 
 ul {
   margin-top: 0.5rem;
-  position: relative;
+  position: absolute;
+  background-color: white;
   padding: 1rem;
   border-radius: 10px;
   z-index: 2;
@@ -106,7 +107,20 @@ li:active {
 
 /* cards */
 .card{
+
   background-color: white;
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.271);
+box-sizing: border-box; 
+display:flex;
+flex-direction: column;
+  margin: 2.2rem 3rem 0 3rem;
+border-radius: 1rem;
+}
+.card>img{
+  border-radius:1rem 1rem 0rem 0rem;
+}
 
+.row{
+  display: flex;
+  flex-direction: row;
 }

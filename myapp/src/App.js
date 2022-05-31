@@ -17,9 +17,12 @@ const App = () => {
   // country select
   const [country, setRegion] = useState('none');
 
+  // placeholder for filtering countries shown into regions
   function redirect(info) {
     setRegion(info);
   }
+
+
   return (
     <div className="App">
       <Nav />
@@ -28,8 +31,10 @@ const App = () => {
           <input type="search" placeholder="Search for a country" />
         </form>
         <button onClick={() => setOn((prev) => (!prev))} className='region'>Filter by Region</button>
+
+        {/* when setOn is true the ul is shown */}
         {on &&
-          <ul>
+          <ul className="filter-list">
             <li onClick={() => redirect('Africa')} className="menu-items">Africa</li>
             <li onClick={() => redirect('America')} className="menu-items">America</li>
             <li onClick={() => redirect('Asia')} className="menu-items">Asia</li>
@@ -38,9 +43,12 @@ const App = () => {
 
           </ul>}
 
-        <Countries />
+
 
       </div>
+
+      {/* component containing country cards */}
+      <Countries />
     </div>
   );
 }
