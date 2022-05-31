@@ -123,4 +123,21 @@ border-radius: 1rem;
 .row{
   display: flex;
   flex-direction: row;
+  margin: 0.5rem 0rem 0 0;
+}
+
+.card-info{
+  padding: 2rem 2rem 3rem 2rem;
+}
+
+.desc{
+  margin-right: 0.3rem;
+}
+
+/* title */
+.title{
+  font-size: 1.5rem;
+  font-weight: 1000;
+  margin: 0.5rem 0rem 1rem 0rem;
+  
 }

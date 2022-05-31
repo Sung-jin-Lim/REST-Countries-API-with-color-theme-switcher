@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-// import axios from 'axios'
-const Countries = () => {
 
+
+
+const Countries = () => {
   const [countries, setCountries] = useState([]);
   // const [isLoading, setIsLoading] = useState(true);
   const fetchItems = async () => {
@@ -14,6 +15,7 @@ const Countries = () => {
 
 
   }
+  // what does this do?
   useEffect(() => {
 
 
@@ -22,8 +24,14 @@ const Countries = () => {
 
   // random two numbers so that slice different section every load
   // the two numbers must always be 5 numbers apart
-  const random2 = Math.floor(Math.random() * countries.length)
-  const random = random2 - 5;
+
+  const random2 = Math.floor(Math.random() * countries.length) // do I have to bring this to the higher level component?
+  const random = random2 - 8;
+
+  // adds in seperation commas:
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
   return (
     <>
@@ -32,23 +40,25 @@ const Countries = () => {
         return (
           <div className='card' key={id}>
             <img src={flags.svg} alt="countryImage" />
-            {name.official}
-            <span className='row'>
-              <b className="desc">Population</b>
-              {population}
-            </span>
-            <span className='row'>
-              <b className="desc">Region</b>
-              {continents}
-            </span>
-            <span className='row'>
-              <b className="desc">Capital</b>
-              {capital}
-            </span>
+            <div className='card-info'>
+              <div className="title">
+                {name.official}
+              </div>
+              <span className='row'>
+                <b className="desc">Population: </b>
+                {numberWithCommas(population)}
+              </span>
+              <span className='row'>
+                <b className="desc">Region: </b>
+                {continents}
+              </span>
+              <span className='row'>
+                <b className="desc">Capital:</b>
+                {capital}
+              </span>
 
-            <br />
-            {capital}
 
+            </div>
           </div>
 
         )
