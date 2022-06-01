@@ -19,6 +19,8 @@ const Countries = (props) => {
     } else {
       console.log(`props.region=== ${props.region}`)
 
+
+
       fetch(`https://restcountries.com/v3.1/region/${props.region}`)
         .then(res => res.json())
         .then(data => setCountries(data))
