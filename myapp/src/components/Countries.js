@@ -6,18 +6,7 @@ import React, { useState, useEffect } from 'react';
 
 const Countries = (props) => {
   //  create function that calls the api and returns the data whenever props.region changes
-
-
-
   const [countries, setCountries] = useState([]);
-  console.log(countries)
-
-
-
-
-
-
-
 
   useEffect(() => {
     if (props.region === 'All') {
@@ -26,10 +15,6 @@ const Countries = (props) => {
       fetch('https://restcountries.com/v3.1/all')
         .then(res => res.json())
         .then(data => setCountries(data))
-
-      // console.log(countries)
-
-
 
     } else {
       console.log(`props.region=== ${props.region}`)
@@ -41,6 +26,18 @@ const Countries = (props) => {
   }, [
     props.region // Research later why this makes the whole thing work!!!!!!
   ])
+
+
+  // set countries array as only countries that contains the inputValue in their name
+  const filteredCountries = countries.filter(country => ((country.name.official).toLowerCase()).includes((props.inputValue).toLowerCase()))
+
+  // const filteredCountries = countries.filter(country => (country.name.official).includes('Korea'))
+  // const filteredCountries = countries.filter(country => (country.name.official === 'Republic of Korea'))
+  console.log(filteredCountries)
+
+  // if (filteredCountries.length > 0) {
+  //   setCountries(filteredCountries)
+  // }
 
 
   // adds in separation commas:
@@ -55,6 +52,8 @@ const Countries = (props) => {
 
 
       {
+
+        // as long as inputValue is not empty, map the filteredCountries array        
         countries.map((country) => {
           const { name, capital, region, flags, population,
           } = country
