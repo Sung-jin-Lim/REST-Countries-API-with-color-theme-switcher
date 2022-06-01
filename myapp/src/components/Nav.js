@@ -4,10 +4,10 @@ function Nav() {
   const [dark, setDark] = useState(false);
 
   if (dark === false) {
-    // console.log('light')
+    console.log('light')
   }
   else if (dark === true) {
-    // console.log('dark')
+    console.log('dark')
   }
 
   return (

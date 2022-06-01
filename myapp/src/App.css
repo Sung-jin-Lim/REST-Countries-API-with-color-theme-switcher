@@ -64,8 +64,8 @@ input[type="search"]:focus {
 
 /* dropdown */
 .region {
-  position: relative;
-  z-index: 2;
+  /* position: relative;
+  z-index: 2; */
 
   font-weight: 600;
 
@@ -96,6 +96,7 @@ ul {
 }
 
 li {
+  cursor: pointer;
   list-style: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -106,17 +107,33 @@ li:active {
 
 
 /* cards */
-.card{
+.card-container{
+  display: grid;
+  gap: 2.2rem;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(8, 1fr);
 
+box-sizing: border-box;
+width:100%; 
+padding: 0rem 3rem;
+
+}
+
+.card{
+position: relative;
+top: 2.2rem;
   background-color: white;
   box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.271);
 box-sizing: border-box; 
 display:flex;
 flex-direction: column;
-  margin: 2.2rem 3rem 0 3rem;
 border-radius: 1rem;
+width:100%; 
 }
 .card>img{
+  width: 100%;
+box-sizing: border-box;
+
   border-radius:1rem 1rem 0rem 0rem;
 }
 
@@ -140,4 +157,29 @@ border-radius: 1rem;
   font-weight: 1000;
   margin: 0.5rem 0rem 1rem 0rem;
   
+}
+
+/* media query */
+@media only screen and (min-width: 650px)  {
+  .card-container{
+  grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+
+
+  }
+}
+
+@media only screen and (min-width: 800px)  {
+  .card-container{
+  grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+
+  }
+}
+@media only screen and (min-width: 1000px)  {
+  .card-container{
+  grid-template-columns: repeat(4, 1fr);
+grid-template-rows: 1fr;
+
+  }
 }
