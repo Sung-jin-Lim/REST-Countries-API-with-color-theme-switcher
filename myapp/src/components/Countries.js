@@ -54,7 +54,7 @@ const Countries = (props) => {
       {
 
         // as long as inputValue is not empty, map the filteredCountries array        
-        countries.map((country) => {
+        filteredCountries.map((country) => {
           const { name, capital, region, flags, population,
           } = country
           return (
