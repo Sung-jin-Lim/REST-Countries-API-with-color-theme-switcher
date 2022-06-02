@@ -17,8 +17,14 @@ function Nav() {
     < div className="Nav" >
       <b>Where in the world?</b>
       <div className="nav-item">
-        <ion-icon name="moon-outline" onClick={() => setDark((prev) => !prev)}></ion-icon>
-        <p onClick={() => setDark((prev) => !prev)}>Dark Mode</p>
+        {dark &&
+          <ion-icon name="sunny-outline"></ion-icon>
+
+        }
+        {!dark &&
+          <ion-icon name="moon-outline" onClick={() => setDark((prev) => !prev)}></ion-icon>
+        }
+        <p onClick={() => setDark((prev) => !prev)}>{dark ? 'Light Mode' : 'Dark Mode'}</p>
       </div>
     </ div >
   );

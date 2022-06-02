@@ -17,7 +17,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem 1rem;
-  box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.644);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.058);
 }
 
 .nav-item {
@@ -46,7 +46,7 @@ input {
   padding-left: 4.3rem;
   margin: 2rem 0rem;
   background: transparent;
-  box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.271);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.051);
   border-radius: 10px;
   border: none;
   background: transparent
@@ -80,7 +80,7 @@ input[type="search"]:focus {
   border-radius: 10px;
   padding: 1rem;
   background-color: #ffffff; /* Green */
-  box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.271);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.053);
 }
 
 .region:focus {
@@ -95,7 +95,7 @@ ul {
   padding: 1rem;
   border-radius: 10px;
   z-index: 2;
-  box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.271);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.051);
   width: 13rem;
   box-sizing: border-box;
 }
@@ -129,7 +129,7 @@ padding: 0rem 3rem 2rem 3rem;
 position: relative;
 top: 2.2rem;
   background-color: white;
-  box-shadow: 1px 1px 10px 1px rgba(204, 204, 204, 0.271);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.051);
 box-sizing: border-box; 
 display:flex;
 flex-direction: column;
@@ -189,3 +189,26 @@ grid-template-rows: 1fr;
 
   }
 }
+
+/* darkmode */
+
+/* 1 */
+:root {
+  --font-color: #333;
+  --background-color: rgb(255, 255, 255);
+}
+
+/* 2 */
+[data-theme="dark"] {
+  --font-color: #eee;
+  --background-color: #212C34;
+  --link-color: lightblue;
+}
+
+/* 3 */
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+
