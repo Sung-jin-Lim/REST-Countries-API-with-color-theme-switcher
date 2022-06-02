@@ -25,7 +25,7 @@ const App = () => {
 
 
   return (
-    <div className="App">
+    <div className="App" data-theme={'dark'}>
       <Nav />
       <div className="container">
 

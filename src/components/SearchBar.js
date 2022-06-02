@@ -13,6 +13,8 @@ const SearchBar = (props) => {
     <div className="search-bar">
       <form onSubmit={handleSubmit}>
         <input type="search" placeholder="Search for a country" onChange={(event) => props.inputValue(event.target.value)} />
+        <label for="search-bar"><ion-icon name="search-outline"></ion-icon></label>
+
       </form>
     </div>
   )
