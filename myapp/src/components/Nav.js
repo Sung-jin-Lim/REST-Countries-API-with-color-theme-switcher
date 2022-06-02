@@ -18,7 +18,7 @@ function Nav() {
       <b>Where in the world?</b>
       <div className="nav-item">
         {dark &&
-          <ion-icon name="sunny-outline"></ion-icon>
+          <ion-icon name="sunny-outline" onClick={() => setDark((prev) => !prev)}></ion-icon>
 
         }
         {!dark &&

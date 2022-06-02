@@ -180,7 +180,33 @@ grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(3, 1fr);
 
-  }
+
+
+}
+/* change filter region position and input */
+.container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.region{
+  height: fit-content;
+}
+
+.filter-list{
+  right: 1rem;
+  margin-top: 13rem;
+}
+
+.search-bar, form{
+  width: 60%;
+}
+
+input{
+  width: 100%;
+}
 }
 @media only screen and (min-width: 1000px)  {
   .card-container{
