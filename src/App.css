@@ -234,8 +234,7 @@ grid-template-rows: repeat(3, 1fr);
 .filter-list{
   right: 1rem;
   margin-top: 13rem;
-  color: var(--font-color);
-  background-color: var(--card-color);
+  
 }
 
 .search-bar, form{
@@ -248,13 +247,8 @@ input{
   background-color: var(--card-color);
 }
 }
-@media only screen and (min-width: 1000px)  {
-  .card-container{
-  grid-template-columns: repeat(4, 1fr);
-grid-template-rows: 1fr;
 
-  }
-}
+
 
 /* darkmode */
 
@@ -263,6 +257,21 @@ grid-template-rows: 1fr;
   --font-color: #333;
   --background-color: rgb(255, 255, 255);
   --card-color:white;
+}
+
+.filter-list{
+  color: var(--font-color);
+  background-color: var(--card-color);
+}
+
+input{
+  color: var(--font-color);
+  background-color: var(--card-color);
+}
+
+.region{
+  color: var(--font-color);
+  background-color: var(--card-color);
 }
 
 /* 2 */

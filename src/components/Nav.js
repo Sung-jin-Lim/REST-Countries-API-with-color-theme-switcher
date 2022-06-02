@@ -1,14 +1,7 @@
-import React, { useState } from 'react';
-function Nav() {
+import React, { useState, ChangeEventHandler } from 'react';
+function Nav(props) {
 
-  const [dark, setDark] = useState(false);
-
-  if (dark === false) {
-    console.log('light')
-  }
-  else if (dark === true) {
-    console.log('dark')
-  }
+  const [dark, setDark] = useState(true);
 
   return (
 
@@ -18,13 +11,22 @@ function Nav() {
       <b>Where in the world?</b>
       <div className="nav-item">
         {dark &&
-          <ion-icon name="sunny-outline" onClick={() => setDark((prev) => !prev)}></ion-icon>
+          <ion-icon name="sunny-outline" onClick={() => {
+            props.changeDark(dark)
+            setDark((prev) => !prev)
+          }}></ion-icon>
 
         }
         {!dark &&
-          <ion-icon name="moon-outline" onClick={() => setDark((prev) => !prev)}></ion-icon>
+          <ion-icon name="moon-outline" onClick={() => {
+            props.changeDark(dark)
+            setDark((prev) => !prev)
+          }}></ion-icon>
         }
-        <p onClick={() => setDark((prev) => !prev)}>{dark ? 'Light Mode' : 'Dark Mode'}</p>
+        <p onClick={() => {
+          props.changeDark(dark)
+          setDark((prev) => !prev)
+        }}>{dark ? 'Dark Mode' : 'Light Mode'}</p>
       </div>
     </ div >
   );
