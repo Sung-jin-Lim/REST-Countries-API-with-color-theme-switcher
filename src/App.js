@@ -3,8 +3,8 @@ import Nav from './components/Nav';
 import React, { useState } from 'react';
 import Countries from './components/Countries'
 import SearchBar from './components/SearchBar';
-
-
+import { Routes, Route } from 'react-router-dom'
+import Countryinfo from './components/Countryinfo';
 
 const App = () => {
   // 
@@ -20,13 +20,15 @@ const App = () => {
   const [region, setRegion] = useState('All');
 
 
-  const [dark, setDark] = useState('light')
+  // todo: take the darklight from localstorage and change the useState value
+  const [dark, setDark] = useState(localStorage.getItem("mode"))
 
 
 
   return (
     <div className="App" data-theme={dark}>
       <Nav changeDark={theme => setDark(theme ? 'dark' : "light")} />
+
       <div className="container">
 
         {/* searchbar */}
