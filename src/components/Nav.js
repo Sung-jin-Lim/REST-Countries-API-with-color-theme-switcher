@@ -33,6 +33,7 @@ function Nav(props) {
         <p onClick={() => {
           props.changeDark(dark)
           setDark((prev) => !prev)
+          localStorage.setItem("mode", dark ? 'dark' : 'light')
         }}>{dark ? 'Light Mode' : 'Dark Mode'}</p>
       </div>
     </ div >
